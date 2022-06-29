@@ -1,0 +1,4 @@
+redisConfig:
+  hotKey:
+    keyName: limit_list
+    keyTimes: 1000
