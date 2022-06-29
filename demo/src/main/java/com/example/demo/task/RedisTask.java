@@ -23,7 +23,7 @@ public class RedisTask {
     private String keyName;
 
     //依靠定时任务，定时在redis中往List中rightPush唯一性令牌
-    // 10S的速率往令牌桶中添加UUID，只为保证唯一性
+    // 1S的速率往令牌桶中添加UUID，只为保证唯一性
     @Scheduled(fixedDelay = 1000,initialDelay = 0)
     public void setIntervalTimeTask(){
         redisTemplate.opsForList().rightPush(this.keyName, UUID.randomUUID().toString());
